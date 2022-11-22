@@ -1,0 +1,70 @@
+<!--This is the Homepage of JSU Direct App. 
+    Created by Adedeji, Mark, Hanif and Summer
+    Date: 09/01/2022
+    Last Edited: 11/17/2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JSU Direct is your go to app for optimal pathway around JSU Campus">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <title>JSU Direct</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="logo">
+        <a href="./index.html">
+            <img src="./images/jsulogo.png" alt="JSU Direct"/>
+        </a>
+      </div>
+      <div class="nav-items">
+        <li><a href="#features">Find JSU Buildings Easily</a></li>
+      </div>
+      <div class="options">
+        <a href="admin.html"><button class="btn-join">Admin</button></a>
+      </div>
+      
+    </nav>
+    <div class="page">
+      <div class="secondPage" id="features">
+        <div class="secondPageContainer">
+          <h1>
+            Search most optimal path between any two building on JSU Campus.
+          </h1>
+          <div class="secondPageInput">
+             <ul>
+                 <input type="text"
+                placeholder="Your Origin"
+                id="origin-location"
+                name="originLocation"
+                autocomplete="off"
+                onfocus="" />   
+            </ul> 
+            <ul>
+                <input type="text"
+                placeholder="Your Destination"
+                id="destination-location"
+                name="destinationLocation"
+                autocomplete="off"
+                onfocus="" /> 
+            </ul>
+              
+          </div>
+        </div>
+      </div>
+    </div>  
+  </body>
+</html>
