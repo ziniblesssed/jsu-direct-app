@@ -7,3 +7,4 @@ target/
 .theia/
 .vscode/
 .bin/
+.git/

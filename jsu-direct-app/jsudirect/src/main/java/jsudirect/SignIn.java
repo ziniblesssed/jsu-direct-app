@@ -19,8 +19,7 @@ import com.google.api.client.json.gson.GsonFactory;
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
  
- private static final long serialVersionUID = 0L;
- private static final String CLIENT_ID = "";
+ private static final String CLIENT_ID = "758470417555-7j0uner8orai70vt2s65s6igj2uj9shr.apps.googleusercontent.com";
  
  
  @Override
@@ -54,8 +53,14 @@ public class SignIn extends HttpServlet {
        System.out.println(familyName);
  
        // Use or store profile information
-       // ...
-       System.out.println("User ID");
+       //Send Username to endpoint, verify it exist and return boolean
+       if(getVerificationStatus(userId)){
+           System.out.println("This user can edit nodes and edges. Redirect to Admin Page");
+           response.sendRedirect(request.getContextPath() + "admin.html");
+           return;
+       }else{
+        System.out.println("This user cannot edit nodes and edges. Redirect to Jsu Direct Home Page");
+       }
  
      } else {
        System.out.println("Invalid ID token.");
@@ -66,7 +71,11 @@ public class SignIn extends HttpServlet {
    }
  }
  
- @Override
+ private boolean getVerificationStatus(String userId) {
+    return true;
+}
+
+@Override
  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
    doGet(request, response);
  }
