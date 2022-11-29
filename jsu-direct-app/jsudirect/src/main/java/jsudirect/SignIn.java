@@ -15,12 +15,12 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
- 
+
+
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
  
  private static final String CLIENT_ID = "758470417555-7j0uner8orai70vt2s65s6igj2uj9shr.apps.googleusercontent.com";
- 
  
  @Override
  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -54,8 +54,9 @@ public class SignIn extends HttpServlet {
  
        // Use or store profile information
        //Send Username to endpoint, verify it exist and return boolean
-       if(getVerificationStatus(userId)){
+       if(getVerificationStatus(email)){
            System.out.println("This user can edit nodes and edges. Redirect to Admin Page");
+
            response.sendRedirect(request.getContextPath() + "admin.html");
            return;
        }else{
@@ -71,8 +72,13 @@ public class SignIn extends HttpServlet {
    }
  }
  
- private boolean getVerificationStatus(String userId) {
-    return true;
+private boolean getVerificationStatus(String email) {
+    Boolean verified = false;
+
+    if (email.substring(19).equals("jsums.edu")){
+        verified = true;
+    }
+    return verified;
 }
 
 @Override

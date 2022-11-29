@@ -39,32 +39,31 @@
       
     </nav>
     <div class="page">
-      <div class="secondPage" id="features">
-        <div class="secondPageContainer">
+        <div class="secondPage" id="features">
+            <div class="secondPageContainer">
           <h1>
             Search most optimal path between any two building on JSU Campus.
           </h1>
-          <div class="secondPageInput">
-             <ul>
-                 <input type="text"
-                placeholder="Your Origin"
-                id="origin-location"
-                name="originLocation"
-                autocomplete="off"
-                onfocus="" />   
-            </ul> 
-            <ul>
-                <input type="text"
-                placeholder="Your Destination"
-                id="destination-location"
-                name="destinationLocation"
-                autocomplete="off"
-                onfocus="" /> 
-            </ul>
-              
-          </div>
+
+          <form action="/directions" method="GET">
+            <label for="Origin">Choose an origin:</label>
+            <select name="origin" id="origin">
+                <option value="17">College of Business</option>
+                <option value="18">College of Science Engineering and Technology</option>
+                <option value="16">Charles F Moore</option>
+                <option value="15">Campus Police</option>
+            </select>
+            <label for="Destination">Choose an destination:</label>
+            <select name="destination" id="destination">
+                <option value="1">Administration Tower</option>
+                <option value="2">Alcohol and Drug Studies</option>
+                <option value="3">Alexander Hall</option>
+                <option value="4">Alumni Affairs</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
         </div>
-      </div>
+        </div>
     </div>  
   </body>
 </html>
