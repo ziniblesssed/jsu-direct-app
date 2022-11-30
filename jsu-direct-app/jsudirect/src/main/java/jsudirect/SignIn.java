@@ -2,6 +2,7 @@ package jsudirect;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.sql.SQLException;
 import java.util.Collections;
  
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,6 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
-
 
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
@@ -69,16 +69,17 @@ public class SignIn extends HttpServlet {
      response.sendRedirect(request.getContextPath() + "index.html");
    } catch (GeneralSecurityException e) {
      e.printStackTrace();
-   }
+   } catch (SQLException e) {
+    e.printStackTrace();
+    }
  }
  
-private boolean getVerificationStatus(String email) {
-    Boolean verified = false;
-
-    if (email.substring(19).equals("jsums.edu")){
-        verified = true;
-    }
-    return verified;
+private boolean getVerificationStatus(String email) throws SQLException {
+    
+    //Update Database to store new Admin Jnumbers dynamically
+    email = "J00000000";
+    SqlConnector sql = new SqlConnector();
+    return  sql.testConnection(email);
 }
 
 @Override
