@@ -1,50 +1,62 @@
-<!--This is the Admin page of JSU Direct App. 
+<!--This is the Admin Edit Request page of JSU Direct App. 
     Created by Adedeji, Mark, Hanif and Summer
     Date: 09/01/2022
     Last Edited: 11/17/2022
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JSU Direct is your go to app for optimal pathway around JSU Campus">
     <link rel="stylesheet" href="./css/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,700;1,900&family=Raleway:wght@400;500;700;800&display=swap" rel="stylesheet">
     <title>JSU Direct</title>
-  </head>
-  <body>
-    <nav class="navigation">
-      <div class="logo">
-        <a href="./index.html">
-            <img src="./images/jsulogo.png" alt="JSU Direct"/>
-        </a>
-      </div>
-      <div class="options">
-        <a href="admin.html"><button class="btn-join">Admin</button></a>
-      </div>
-      
-    </nav>
-        <div class="">
-        <h5>Welcome to Admin Page</h5>
-        <p class="subtitle-regular">Sign up with Google to get started</p>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img height="50px" width="50px" src="./images/jsulogo.png" alt="home" />
+                    </a>
+                </div>
+                <div class="admin">
+                    <a href="signIn.html">
+                        <h3>Admin</h3>
+                    </a> 
+                </div>
+            </nav>
+            <div class="textContainerForm">
+                <div class="textBodyAdmin">
+                    <div class="textTitle">
+                        <h1>ADMIN</h1>
+                         <p>Send a message to request for edits</p>
+                    </div>
+                    <div class="textFormAdmin">
+                        <form action="/requestEdit" method="POST">
+                            <div class="name">
+                                <label for="current-location">Name</label>
+                                <input type="text" name="name" />
+                            </div>
+                            <div class="email">
+                                <label for="email" name="email">Email</label >
+                                <input name="email" type="email" />
+                            </div>
+                            <div class="message">
+                                <label for="message" name="message">Message</label>
+                                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                            </div>
+                    </div>
+                            <button type="submit">SUBMIT</button>
+                        </form>
+                </div>
+            </div>
         </div>
-
-        <div id="g_id_onload" class="g_id_signin"
-        data-client_id="758470417555-7j0uner8orai70vt2s65s6igj2uj9shr.apps.googleusercontent.com"
-        data-login_uri="https://localhost:8080/signIn" data-type="standard" data-size="large" data-theme="outline"
-        data-height="400px" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="center">
-        </div>
-        <script src="https://accounts.google.com/gsi/client" async defer></script>
-  </body>
+    </div>
+</body>
 </html>

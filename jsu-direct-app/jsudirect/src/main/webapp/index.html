@@ -11,60 +11,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="JSU Direct is your go to app for optimal pathway around JSU Campus">
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,700;1,900&family=Raleway:wght@400;500;700;800&display=swap"
       rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     <title>JSU Direct</title>
   </head>
   <body>
-    <nav class="navigation">
-      <div class="logo">
-        <a href="./index.html">
-            <img src="./images/jsulogo.png" alt="JSU Direct"/>
-        </a>
-      </div>
-      <div class="nav-items">
-        <li><a href="#features">Find JSU Buildings Easily</a></li>
-      </div>
-      <div class="options">
-        <a href="admin.html"><button class="btn-join">Admin</button></a>
-      </div>
-      
-    </nav>
-    <div class="page">
-      <div class="secondPage" id="features">
-        <div class="secondPageContainer">
-          <h1>
-            Search most optimal path between any two building on JSU Campus.
-          </h1>
-          <div class="secondPageInput">
-             <ul>
-                 <input type="text"
-                placeholder="Your Origin"
-                id="origin-location"
-                name="originLocation"
-                autocomplete="off"
-                onfocus="" />   
-            </ul> 
-            <ul>
-                <input type="text"
-                placeholder="Your Destination"
-                id="destination-location"
-                name="destinationLocation"
-                autocomplete="off"
-                onfocus="" /> 
-            </ul>
-              
+    <div class="main">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <a href="index.html">
+                <img height="50px" width="50px" src="./images/jsulogo.png" alt="home" />
+            </a>
+          </div>
+          <div class="admin">
+           <a href="signIn.html">
+                <h3>Admin</h3>
+           </a> 
+          </div>
+        </nav>
+        <div class="textContainer">
+          <div class="textBody">
+            <div class="textTitle">
+              <h1>FIND THE SHORTEST PATH</h1>
+            </div>
+            <div class="textForm">
+              <form action="/directions" method="GET">
+                <div class="origin">
+                  <label for="Origin">Origin</label>
+                  <select name="origin" id="origin">
+                    <option value=""></option>
+
+                    <option value="17">College of Business</option>
+                    <option value="18">
+                      College of Science Engineering and Technology
+                    </option>
+                    <option value="16">Charles F Moore</option>
+                    <option value="15">Campus Police</option>
+                  </select>
+                </div>
+
+                <div class="destination">
+                  <label for="Destination">Destination</label>
+                  <select name="destination" id="destination">
+                    <option value=""></option>
+
+                    <option value="1">Administration Tower</option>
+                    <option value="2">Alcohol and Drug Studies</option>
+                    <option value="3">Alexander Hall</option>
+                    <option value="4">Alumni Affairs</option>
+                  </select>
+                </div>
+            </div>
+            <button type="submit">SEARCH</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </body>
 </html>

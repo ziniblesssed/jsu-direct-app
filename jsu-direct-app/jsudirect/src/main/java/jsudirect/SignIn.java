@@ -2,6 +2,7 @@ package jsudirect;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.sql.SQLException;
 import java.util.Collections;
  
 import javax.servlet.annotation.WebServlet;
@@ -15,12 +16,11 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
- 
+
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
  
  private static final String CLIENT_ID = "758470417555-7j0uner8orai70vt2s65s6igj2uj9shr.apps.googleusercontent.com";
- 
  
  @Override
  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -54,8 +54,9 @@ public class SignIn extends HttpServlet {
  
        // Use or store profile information
        //Send Username to endpoint, verify it exist and return boolean
-       if(getVerificationStatus(userId)){
+       if(getVerificationStatus(email)){
            System.out.println("This user can edit nodes and edges. Redirect to Admin Page");
+
            response.sendRedirect(request.getContextPath() + "admin.html");
            return;
        }else{
@@ -68,11 +69,17 @@ public class SignIn extends HttpServlet {
      response.sendRedirect(request.getContextPath() + "index.html");
    } catch (GeneralSecurityException e) {
      e.printStackTrace();
-   }
+   } catch (SQLException e) {
+    e.printStackTrace();
+    }
  }
  
- private boolean getVerificationStatus(String userId) {
-    return true;
+private boolean getVerificationStatus(String email) throws SQLException {
+    
+    //Update Database to store new Admin Jnumbers dynamically
+    email = "J00000000";
+    SqlConnector sql = new SqlConnector();
+    return  sql.testConnection(email);
 }
 
 @Override
