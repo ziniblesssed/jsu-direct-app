@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,700;1,900&family=Raleway:wght@400;500;700;800&display=swap" rel="stylesheet">
     <title>JSU Direct</title>
 </head>
-<body>
+<body onload="displayDirections()">
     <div class="main">
       <div class="container">
         <nav>
@@ -35,9 +35,12 @@
           <div class="textBodyAdmin">
             <div class="textTitle">
               <h1>Welcome To Directions Page</h1>
+              <!-- Insert Next Code Here via JS -->
+              <p id="directions"></p>
             </div>
-            <!-- Insert Next Code Here via JS -->
+            
           </div>
+          <script src="js/destination.js"></script> 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 </html>
