@@ -41,16 +41,14 @@
               <h1>FIND THE SHORTEST PATH</h1>
             </div>
             <div class="textForm">
-              <form action="/directions" method="GET">
+              <form>
                 <div class="origin">
                   <label for="Origin">Origin</label>
                   <select name="origin" id="origin">
-                    <option value=""></option>
-
-                    <option value="17">College of Business</option>
                     <option value="18">
-                      College of Science Engineering and Technology
-                    </option>
+                        College of Science Engineering and Technology
+                      </option>                    
+                    <option value="17">College of Business</option>
                     <option value="16">Charles F Moore</option>
                     <option value="15">Campus Police</option>
                   </select>
@@ -59,8 +57,6 @@
                 <div class="destination">
                   <label for="Destination">Destination</label>
                   <select name="destination" id="destination">
-                    <option value=""></option>
-
                     <option value="1">Administration Tower</option>
                     <option value="2">Alcohol and Drug Studies</option>
                     <option value="3">Alexander Hall</option>
@@ -68,11 +64,12 @@
                   </select>
                 </div>
             </div>
-            <button type="submit">SEARCH</button>
+            <button id="submit-btn" type="submit">SEARCH</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script src="js/script.js"></script> 
   </body>
 </html>
